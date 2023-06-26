@@ -1,5 +1,15 @@
 #include "main.h"
 
+/**
+ * convert_x - Converts an unsigned int argument to hexadecimal
+ * and stores it in a buffer.
+ * @args: A va_list pointing to the unsigned int to be converted.
+ * @buffer: A pointer to the buffer to store the converted unsigned int.
+ * @buffer_index: The index in the buffer where the converted unsigned
+ * int should be stored.
+ *
+ * Return: The index in the buffer after storing the converted unsigned int.
+ */
 int convert_x(va_list args, char *buffer, int buffer_index)
 {
 	unsigned int num;

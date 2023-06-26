@@ -1,5 +1,17 @@
 #include "main.h"
 
+/**
+ * convert_S - Converts a string argument and stores it in a buffer.
+ * @args: A va_list pointing to the string to be converted.
+ * @buffer: A pointer to the buffer to store the converted string.
+ * @buffer_index: The index in the buffer where the converted
+ * string should be stored.
+ *
+ * Description: Non-printable characters (ASCII values < 32 or >= 127) are
+ * converted to \x followed by their ASCII code value in hexadecimal.
+ *
+ * Return: The index in the buffer after storing the converted string.
+ */
 int convert_S(va_list args, char *buffer, int buffer_index)
 {
 	char *str;

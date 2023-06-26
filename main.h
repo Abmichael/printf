@@ -33,6 +33,8 @@ int convert_x(va_list args, char *buffer, int buffer_index);
 int convert_X(va_list args, char *buffer, int buffer_index);
 int convert_S(va_list args, char *buffer, int buffer_index);
 int convert_p(va_list args, char *buffer, int buffer_index);
+int convert_r(va_list args, char *buffer, int buffer_index);
+int convert_R(va_list args, char *buffer, int buffer_index);
 int convert_unrecognized(va_list args, char *buffer, int buffer_index, char c);
 int convert_percent(va_list args, char *buffer, int buffer_index);
 converter_t get_converter(char c);

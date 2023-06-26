@@ -1,5 +1,15 @@
 #include "main.h"
 
+/**
+ * convert_d - Converts an int argument to decimal and stores
+ * it in a buffer.
+ * @args: A va_list pointing to the int to be converted.
+ * @buffer: A pointer to the buffer to store the converted int.
+ * @buffer_index: The index in the buffer where the converted
+ * int should be stored.
+ *
+ * Return: The index in the buffer after storing the converted int.
+ */
 int convert_d(va_list args, char *buffer, int buffer_index)
 {
 	int num;

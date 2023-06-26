@@ -1,5 +1,14 @@
 #include "main.h"
 
+/**
+ * convert_percent - Stores a percent sign in a buffer.
+ * @args: A va_list pointing to the argument to be converted.
+ * @buffer: A pointer to the buffer to store the percent sign.
+ * @buffer_index: The index in the buffer where the percent
+ * sign should be stored.
+ *
+ * Return: The index in the buffer after storing the percent sign.
+ */
 int convert_percent(va_list args, char *buffer, int buffer_index)
 {
 	(void)args;
@@ -8,6 +17,12 @@ int convert_percent(va_list args, char *buffer, int buffer_index)
 	return (buffer_index);
 }
 
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string to get the length of.
+ *
+ * Return: The length of the string.
+ */
 int _strlen(char *s)
 {
 	int i;
@@ -16,6 +31,15 @@ int _strlen(char *s)
 		;
 	return (i);
 }
+
+/**
+ * get_converter - Returns a pointer to a function that converts an argument
+ * of a specified type and stores it in a buffer.
+ * @c: The conversion specifier character.
+ *
+ * Return: A pointer to the appropriate conversion function, or NULL if no
+ * conversion function exists for the specified type.
+ */
 converter_t get_converter(char c)
 {
 	switch (c)
@@ -44,11 +68,20 @@ converter_t get_converter(char c)
 		return (convert_p);
 	case 'S':
 		return (convert_S);
+	case 'r':
+		return (convert_r);
+	case 'R':
+		return (convert_R);
 	default:
 		return (NULL);
 	}
 }
 
+/**
+ * reverse_string - Reverses a string in place.
+ * @s: The string to reverse.
+ * @i: The length of the string.
+ */
 void reverse_string(char *s, int i)
 {
 	int j;
@@ -62,6 +95,17 @@ void reverse_string(char *s, int i)
 	}
 }
 
+/**
+ * _itoa - Converts an integer to a string in a specified base and
+ * stores it in a buffer.
+ * @num: The integer to convert.
+ * @base: The base to convert the integer to (2 <= base <= 36).
+ * @uppercase: Whether or not to use uppercase letters for
+ * bases > 10 (0 or 1).
+ *
+ * Return: A pointer to the buffer containing the converted integer.
+ * This buffer must be freed by the caller.
+ */
 char *_itoa(long int num, int base, int uppercase)
 {
 	int i = 0, neg = 0;
